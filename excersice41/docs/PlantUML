@@ -2,8 +2,8 @@
 
 class FileReader {
 
-+takeNamesFromFile()
-+printNamesToFile(ArrayList<String> names)
++takeNamesFromFile() throws IOException
++printNamesToFile(ArrayList<String> names) throws IOException
 
 }
 @enduml
