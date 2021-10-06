@@ -1,0 +1,9 @@
+@startuml
+
+class FileReader {
+
++takeNamesFromFile()
++printNamesToFile(ArrayList<String> names)
+
+}
+@enduml
