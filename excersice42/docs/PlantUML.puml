@@ -1,0 +1,11 @@
+@startuml
+
+class FileRead
+{
+    +List<String> takeInfoFromFile()
+    +List<Map<String, String>> separateInfo(List<String> info)
+    +void printInfoToFile(List<Map<String, String>> separated)
+}
+
+
+@enduml
