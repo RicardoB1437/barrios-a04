@@ -1,0 +1,9 @@
+@startuml
+
+class FileReader {
+
++takeNamesFromFile() throws IOException
++printNamesToFile(ArrayList<String> names) throws IOException
+
+}
+@enduml
