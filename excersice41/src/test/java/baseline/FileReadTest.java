@@ -2,9 +2,6 @@ package baseline;
 
 import org.junit.jupiter.api.Test;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -14,22 +11,10 @@ class FileReadTest {
     @Test
     void takeNamesFromFile()
     {
+        FileRead read = new FileRead();
+
         //take in input
-        ArrayList<String> names = new ArrayList<>();
-        try
-        {
-            BufferedReader reader = new BufferedReader(new FileReader("data/exercise41_input.txt"));
-            String line = "";
-            while((line=reader.readLine())!=null)
-            {
-                names.add(line);
-            }
-            reader.close();
-        }
-        catch (IOException e)
-        {
-            throw new RuntimeException("File not found", e);
-        }
+        ArrayList<String> names = read.takeNamesFromFile();
 
         //make test list
         ArrayList<String> test = new ArrayList<>();
