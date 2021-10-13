@@ -2,6 +2,9 @@ package baseline;
 
 import org.junit.jupiter.api.Test;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -62,6 +65,32 @@ class FileReadTest {
     @Test
     void printInfoToFile()
     {
-        //no need to test void function (just printing)
+        FileRead read = new FileRead();
+
+        ArrayList<String> info = new ArrayList<>();
+        try
+        {
+            BufferedReader reader = new BufferedReader(new FileReader("data/exercise42_output.txt"));
+            String line = "";
+            while((line=reader.readLine())!=null)
+            {
+                info.add(line);
+            }
+            reader.close();
+        }
+        catch (IOException e)
+        {
+            throw new RuntimeException("File not found", e);
+        }
+
+        String expected = "Johnson  Jim      56500";
+        String actual = info.get(3);
+
+        String expected2 = "Swift    Geoffrey 14200";
+        String actual2 = info.get(6);
+
+        //testing random spots in the file, if they are right then we can assume the whole file printed right
+        assertEquals(expected, actual);
+        assertEquals(expected2, actual2);
     }
 }
