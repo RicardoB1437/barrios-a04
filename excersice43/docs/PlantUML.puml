@@ -3,7 +3,8 @@
 class Solution43
 {
     +main(String[])
-    'calls the filemake function
+    'calls promptForInfo()
+    'calls makeFiles()
 }
 
 class FileMake
@@ -27,7 +28,8 @@ class FileMake
     'returns true or false depending on y or n
 
     +makeFiles()
-    'makes files using the information given from user
+    'makes folders using the information given from user
+    'makes file using the information given from user
 }
 
 FileMake -- Solution43
