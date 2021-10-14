@@ -1,0 +1,35 @@
+@startuml
+
+class Solution43
+{
+    +main(String[])
+    'calls the filemake function
+}
+
+class FileMake
+{
+    -site
+    -author
+    -java
+    -css
+
+    +promptForInfo()
+    'prompts for site, author, java, and css
+    'sets the value for the class variables
+
+    -getSite(): String
+    'returns site string
+    -getAuthor(): String
+    'returns author string
+    -getJava(): Boolean
+    'returns true or false depending on y or n
+    -getCss(): Boolean
+    'returns true or false depending on y or n
+
+    +makeFiles()
+    'makes files using the information given from user
+}
+
+FileMake -- Solution43
+
+@enduml
