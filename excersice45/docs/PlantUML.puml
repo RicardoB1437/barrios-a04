@@ -16,7 +16,7 @@ class FileRead
 
     +takeInfoFromFile()
     'reads in info from file
-    -replace(List<String>)
+    -replace(List<String>): List<String>
     'replaces all instances of "utilize" with "use"
     +printInfoToFile()
     'calls replace
