@@ -1,0 +1,28 @@
+@startuml
+
+class Solution45
+{
+    +main(String[])
+    'calls takeInfoFromFile
+    'cals printInfoToFile
+}
+
+class FileRead
+{
+    List<String> info
+
+    +getInfo(): List<String>
+    +setInfo()
+
+    +takeInfoFromFile()
+    'reads in info from file
+    -replace(List<String>)
+    'replaces all instances of "utilize" with "use"
+    +printInfoToFile()
+    'calls replace
+    'prints contents of list created by replace to file
+}
+
+Solution45 -- FileRead
+
+@enduml
