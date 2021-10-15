@@ -28,12 +28,21 @@ public class Locator
         this.searchString = searchString;
     }
 
-    private boolean isValidProduct(String str)
+    public boolean isValidProduct(String str)
     {
         //goes through list of products and checks if it contains str
+        setProducts();
+        for(Product finder : getProducts())
+        {
+            if(finder.getName().equals(str))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
-    public String takeSearchString()
+    private String takeSearchString()
     {
         //prompt for search string
         System.out.print("What is the product name? ");
@@ -44,11 +53,19 @@ public class Locator
     public String takeValidString()
     {
         //loops through until valid product is entered
+        String str = takeSearchString();
+        while(!isValidProduct(str))
+        {
+            System.out.println("Sorry, that product was not found in our inventory.");
+            str = takeSearchString();
+        }
+        return str;
     }
 
     public Product locate(String searchString)
     {
         //loop through list of products until search string is found and return it
+        setProducts();
         Product found = null;
         for(Product finder : getProducts())
         {

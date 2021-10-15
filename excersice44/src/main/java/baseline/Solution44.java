@@ -6,8 +6,7 @@
 package baseline;
 
 /*
- * all current methods/classes will be placed in their proper locations after psuedocode is done
- * they are all here simply for the moment so that i can visualize all code together
+ * all previous methods/classes located here were placed in their correct locations
  */
 
 public class Solution44
@@ -16,9 +15,9 @@ public class Solution44
     {
         Locator locator = new Locator();
 
-        //String searchString = locator.takeValidString();
-        //Product desiredProduct = locator.locate(searchString);
-        //locator.printLocatedInfo(desiredProduct);
+        String searchString = locator.takeValidString();
+        Product desiredProduct = locator.locate(searchString);
+        locator.printLocatedInfo(desiredProduct);
     }
 }
 
