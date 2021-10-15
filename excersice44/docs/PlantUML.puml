@@ -1,0 +1,70 @@
+@startuml
+
+class Locator
+{
+    -List<Product> products
+    -String searchString
+
+    +getProducts(): List<Product>
+    +setProducts()
+    'this is where the information is parsed and set
+    'parseInfo called
+    +getSearchString(): String
+    +setSearchString()
+
+    +takeSearchString(): String
+    'prompts user for search string
+    +isValidProduct(String searchString): boolean
+    'determines if search string is contained in product list
+    +takeValidString(): String
+    'calls takeSearchString and isValidProduct
+    'loops until valid product is found
+
+    +locate(String searchString): Product
+    'takes in valid product name
+    'returns corresponding product
+    +printLocatedInfo(String searchString)
+    'prints info for valid product
+}
+
+class Parser
+{
+    +parseInfo(): List<Product>
+    'opens up the file
+    'creates json elements and objects
+    'converts the json objects to java objects
+    'puts objects in list
+    'returns list
+}
+
+class Product
+{
+    String name
+    double price
+    int quantity
+
+    Product(name, price, quantity)
+
+    'getters and setters
+    +getName(): String
+    +setName()
+    +getPrice(): double
+    +setPrice()
+    +getQuantity(): int
+    +setQuantity()
+
+    +toString(): String
+    'formats the printing
+}
+
+class Solution44
+{
+    +main(String[])
+    'calls takeValidString, locate, and printLocatedInfo
+}
+
+Solution44 -- Locator
+Locator --o Parser
+Locator --o Product
+
+@enduml
