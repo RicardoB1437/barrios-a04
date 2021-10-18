@@ -1,0 +1,23 @@
+@startuml
+
+class Solution46
+{
+    main(String [])
+    'calls takeInfoFromFile
+    'calls printInfoToFile
+}
+
+class FileInfoReader
+{
+    List<String> fileInfo
+    Map<String, Integer> wordCount
+    List<Map<String, Integer>> allWordsCount
+
+    +takeInfoFromFile()
+    +countWords()
+    +printInfoToFile()
+}
+
+FileInfoReader -- Solution46
+
+@enduml
